@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mecânica de Motos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🏍️ MOTO<span>FIX</span></div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#diagnostico">Diagnóstico</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="hero">
+
+            <div class="hero-text">
+                <p class="subtitulo">MECÂNICA DE MOTOS</p>
+
+                <h1>
+                    Descubra o problema
+                    <span>da sua moto</span>
+                </h1>
+
+                <p>
+                    Responda algumas perguntas sobre o comportamento
+                    da sua moto e siga um diagnóstico interativo.
+                </p>
+
+                <button onclick="iniciarDiagnostico()">
+                    INICIAR DIAGNÓSTICO
+                </button>
+            </div>
+
+            <div class="moto-wrap"><div class="moto">🏍️</div><div class="hero-chip">⚡ Diagnóstico interativo</div><div class="hero-chip">🛠️ Dicas de manutenção</div></div>
+
+        </section>
+
+
+        <!-- DIAGNÓSTICO -->
+        <section id="diagnostico" class="diagnostico">
+
+            <div class="card">
+
+                <div class="topo-card">
+                    <span id="numeroPergunta">Pergunta 1</span>
+
+                    <span id="progresso">1 / 5</span>
+                </div>
+
+                <div class="barra">
+                    <div id="barraProgresso"></div>
+                </div>
+
+                <h2 id="pergunta">
+                    A moto está apresentando algum problema?
+                </h2>
+
+                <p id="dicaContexto" class="dica-contexto">Escolha a opção que mais combina com o sintoma.</p>
+
+                <div id="respostas" class="respostas">
+
+                    <button onclick="responder(1)">
+                        Sim, não está funcionando corretamente
+                    </button>
+
+                    <button onclick="responder(2)">
+                        Sim, está fazendo um barulho estranho
+                    </button>
+
+                    <button onclick="responder(3)">
+                        Não, quero fazer uma revisão
+                    </button>
+
+                </div>
+
+                <button
+                    id="voltar"
+                    class="botao-voltar"
+                    onclick="voltarPergunta()"
+                    style="display:none;">
+                    ← Voltar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTADO -->
+        <section id="resultado" class="resultado">
+
+            <div class="resultado-card">
+
+                <div class="icone-resultado">
+                    🔧
+                </div>
+
+                <p class="subtitulo">DIAGNÓSTICO</p>
+
+                <h2 id="tituloResultado">
+                    Resultado
+                </h2>
+
+                <p id="textoResultado">
+                    Resultado do diagnóstico.
+                </p>
+
+                <div class="aviso">
+                    ⚠️ Este diagnóstico é apenas informativo.
+                    Para problemas mecânicos reais, procure um mecânico
+                    especializado.
+                </div>
+
+                <div id="acoesResultado" class="acoes-resultado"></div>
+
+                <button onclick="reiniciar()">
+                    ↻ FAZER NOVO DIAGNÓSTICO
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section id="sobre" class="sobre">
+
+            <h2>Sobre o MotoFix</h2>
+
+            <p>
+                O MotoFix é um projeto educativo sobre mecânica de motos.
+                Seu objetivo é ajudar iniciantes a entender alguns dos
+                principais sintomas e componentes de uma motocicleta.
+            </p>
+
+            <div class="cards-info">
+
+                <div>
+                    <span>⚙️</span>
+                    <h3>Motor</h3>
+                    <p>
+                        Aprenda sobre funcionamento e problemas comuns.
+                    </p>
+                </div>
+
+                <div>
+                    <span>🔋</span>
+                    <h3>Elétrica</h3>
+                    <p>
+                        Identifique possíveis problemas no sistema elétrico.
+                    </p>
+                </div>
+
+                <div>
+                    <span>🛞</span>
+                    <h3>Manutenção</h3>
+                    <p>
+                        Conheça itens importantes de manutenção preventiva.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <section class="manutencao" id="manutencao"><div><p class="subtitulo">CUIDE DA SUA MOTO</p><h2>Checklist de manutenção</h2><p class="manutencao-desc">Marque os itens que você já conferiu. Sua seleção fica salva neste aparelho.</p></div><div class="checklist" id="checklist"><label><input type="checkbox" data-item="oleo"> Óleo do motor</label><label><input type="checkbox" data-item="pneus"> Pressão e estado dos pneus</label><label><input type="checkbox" data-item="freios"> Freios</label><label><input type="checkbox" data-item="corrente"> Corrente e lubrificação</label><label><input type="checkbox" data-item="luzes"> Luzes e setas</label><label><input type="checkbox" data-item="bateria"> Bateria e partida</label></div><p id="checklistStatus" class="checklist-status">0 de 6 itens conferidos</p><button class="limpar-checklist" type="button" onclick="limparChecklist()">Limpar checklist</button></section>
+
+    <footer>
+        <p>🏍️ MotoFix — Projeto educativo de mecânica de motos</p><p class="footer-small">Informações educativas; não substituem uma inspeção profissional.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
